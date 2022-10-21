@@ -1,0 +1,82 @@
+# 查看信息和导出字符串
+
+TODO：
+
+* 【记录】静态分析iOS的17.8.0旧版抖音
+* 【记录】静态分析黑豹二进制HeiBao
+* 【记录】静态分析黑豹动态库zzzzHeiBaoLib.dylib
+* 【记录】用jtool查看抖音二进制信息
+* 【记录】用rabin2查看抖音AwemeCore二进制的信息
+* 【记录】静态分析Mask的动态库：Mask.dylib
+
+---
+
+此处对于静态分析中的，查看二进制信息和导出字符串等资源，给出实例，供参考。
+
+## HeiBao的dylib
+
+对于二级制文件，此处是dylib的动态库：
+
+```bash
+➜  DynamicLibraries pwd
+/Users/crifan/dev/DevRoot/Aweme/exportFromiPhone/iPhoneX-137/Library/MobileSubstrate/DynamicLibraries
+➜  DynamicLibraries ll
+total 152568
+-rwxr-xr-x@ 1 crifan  staff   6.2M  3 14 10:34 zzzzHeiBaoLib.dylib
+-rw-r--r--  1 crifan  staff    68M  3 17 21:39 zzzzHeiBaoLib.i64
+```
+
+去导出字符串等资源：
+
+```bash
+➜  DynamicLibraries otool -l zzzzHeiBaoLib.dylib > HeiBaoLib_otool_l.txt
+➜  DynamicLibraries otool -oV zzzzHeiBaoLib.dylib > HeiBaoLib_otool_oV.txt
+➜  DynamicLibraries nm zzzzHeiBaoLib.dylib > HeiBaoLib_nm.txt
+➜  DynamicLibraries strings zzzzHeiBaoLib.dylib > HeiBaoLib_strings.txt
+
+➜  DynamicLibraries ll
+total 153112
+-rw-r--r--  1 crifan  staff   108K  3 21 10:00 HeiBaoLib_nm.txt
+-rw-r--r--  1 crifan  staff    12K  3 21 10:00 HeiBaoLib_otool_l.txt
+-rw-r--r--  1 crifan  staff    51K  3 21 10:00 HeiBaoLib_otool_oV.txt
+-rw-r--r--  1 crifan  staff    89K  3 21 10:00 HeiBaoLib_strings.txt
+-rwxr-xr-x@ 1 crifan  staff   6.2M  3 14 10:34 zzzzHeiBaoLib.dylib
+-rw-r--r--  1 crifan  staff    68M  3 17 21:39 zzzzHeiBaoLib.i64
+```
+
+后续即可去分析和搜索想要研究的值了。
+
+比如：
+
+搜索越狱 jailbreak 相关内容：
+
+![heibao_lib_search_jailbreak](../assets/img/heibao_lib_search_jailbreak.jpg)
+
+## Mask的dylib
+
+对于一个二进制，此处是一个动态库文件`Mask.dylib`，想要导出字符串等资源，供后续分析。
+
+典型的成套的做法是：
+
+```bash
+otool -l Mask.dylib > MaskDylib_otool_l.txt
+otool -oV Mask.dylib > MaskDylib_otool_oV.txt
+
+nm Mask.dylib > MaskDylib_nm.txt
+
+strings Mask.dylib > MaskDylib_strings.txt
+
+jtool2 -h Mask.dylib > MaskDylib_jtool2_h_header.txt
+jtool2 -l Mask.dylib > MaskDylib_jtool2_l_list.txt
+jtool2 -L Mask.dylib > MaskDylib_jtool2_L_library.txt
+jtool2 -S Mask.dylib > MaskDylib_jtool2_S_symbol.txt
+jtool2 --analyze Mask.dylib > MaskDylib_jtool2_analyze.txt
+
+rabin2 -I Mask.dylib > MaskDylib_rabin2_I_identification.txt
+rabin2 -i Mask.dylib > MaskDylib_rabin2_i_imports.txt
+rabin2 -E Mask.dylib > MaskDylib_rabin2_E_exports.txt
+rabin2 -l Mask.dylib > MaskDylib_rabin2_l_libraries.txt
+rabin2 -z Mask.dylib > MaskDylib_rabin2_z_strings.txt
+rabin2 -s Mask.dylib > MaskDylib_rabin2_s_symbols.txt
+rabin2 -S Mask.dylib > MaskDylib_rabin2_S_sections.txt
+```
