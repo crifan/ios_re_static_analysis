@@ -22,5 +22,8 @@
   * [查看信息和导出字符串](analysis_examples/bin_info_exp_str.md)
 * [经验心得](some_experience/README.md)
   * [IDA vs Hopper](some_experience/ida_vs_hopper.md)
+* [相关工具](related_tools/README.md)
+  * [radare2](related_tools/radare2/README.md)
+    * [Cutter](related_tools/radare2/cutter.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)

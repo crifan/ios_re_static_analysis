@@ -1,5 +1,11 @@
 # IDA vs Hopper
 
+TODO：
+
+* 【整理】iOS逆向工具：IDA和 Hopper 对比
+
+---
+
 * Hopper vs IDA
   * 平台支持
     * Hopper：更倾向于`Mac`
