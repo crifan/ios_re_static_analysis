@@ -9,6 +9,10 @@ TODO：
 
 ---
 
+后已整理出独立教程，详见：
+
+[逆向利器：IDA (crifan.org)](https://book.crifan.org/books/reverse_tool_ida/website/)
+
 ## iOS逆向之IDA使用心得
 
 ### objc_enumerationMutation表示循环的逻辑
