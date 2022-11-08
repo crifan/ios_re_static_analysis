@@ -4,9 +4,6 @@ TODO：
 
 * 【基本解决】砸壳抖音ipa后导出iOS抖音头文件
 
-* 常见问题
-  * 【已解决】class-dump导出砸壳后抖音ipa的头文件为空
-
 ---
 
 * class-dump
@@ -67,6 +64,17 @@ TODO：
 ```
 
 -》说明这些文件都是通过`class-dump`从库文件中导出生成的。
+
+## 常见问题
+
+TODO：
+
+* 【已解决】class-dump导出砸壳后抖音ipa的头文件为空
+* 【已解决】class-dump导出Framework二进制AwemeCore报错：Cannot find offset for address in dataOffsetForAddress
+* 【未解决】Mac中无法删除临时目录出现没有权限Operation not permitted
+* 【已解决】砸壳后抖音ipa安装失败：DeviceNotSupportedByThinning
+
+---
 
 ## help帮助语法
 
