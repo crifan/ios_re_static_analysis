@@ -1,5 +1,7 @@
 # 参考资料
 
+* 【已解决】class-dump导出砸壳后抖音ipa的头文件为空
+* 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
 * 

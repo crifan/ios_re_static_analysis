@@ -69,12 +69,25 @@ TODO：
 
 TODO：
 
-* 【已解决】class-dump导出砸壳后抖音ipa的头文件为空
+* 【记录】支持iOS的Swift和ObjC混编的class-dump
 * 【已解决】class-dump导出Framework二进制AwemeCore报错：Cannot find offset for address in dataOffsetForAddress
 * 【未解决】Mac中无法删除临时目录出现没有权限Operation not permitted
 * 【已解决】砸壳后抖音ipa安装失败：DeviceNotSupportedByThinning
 
 ---
+
+### class-dump导出头文件是空的
+
+* 现象：抖音的二进制`AwemeCore`，用`class-dump`导出头文件是空的
+* 原因：抖音内部代码应该是`Swift`和`ObjC`混编代码，原版`class-dump`只支持`ObjC`的，不支持`Swift`和`ObjC`混编，所以导出是空的。
+* 解决办法：找支持Swift的版本的class-dump去导出，即可
+  * 比如
+    * `MonkeyDev`中的`class-dump`
+      * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+        * 相关命令
+          ```bash
+          MonkeyDev/bin/class-dump --arch arm64 -H AwemeCore -o crifan/Aweme/class_dump_output
+          ```
 
 ## help帮助语法
 
