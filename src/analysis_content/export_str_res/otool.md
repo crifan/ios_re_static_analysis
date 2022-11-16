@@ -21,6 +21,10 @@ TODO：
     * x43x61x69/otx: The Mach-O disassembler. Now 64bit and Xcode 6 compatible.
       * https://github.com/x43x61x69/otx
 
+## 下载安装otool
+
+Mac自带otool，无需额外安装。
+
 查看当前otool位置：
 
 ```bash
@@ -50,7 +54,14 @@ Apple LLVM version 10.0.1 (clang-1001.0.46.4)
     x86-64     - 64-bit X86: EM64T and AMD64
 ```
 
-## help帮助语法
+## otool用法
+
+```bash
+otool -l iOSBinaryFile > iOSBinaryFile_otool_l.txt
+otool -oV iOSBinaryFile > iOSBinaryFile_otool_oV.txt
+```
+
+## otool的help语法
 
 ```bash
 ✘ crifan@licrifandeMacBook-Pro  ~  otool -help

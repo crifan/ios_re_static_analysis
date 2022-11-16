@@ -58,3 +58,9 @@
     * GitHub
       * radareorg/cutter: Free and Open Source Reverse Engineering Platform powered by radare2
         * https://github.com/rizinorg/cutter
+
+## 使用心得
+
+TODO：
+
+* 【记录】用Cutter查看分析抖音AwemeCore二进制文件信息

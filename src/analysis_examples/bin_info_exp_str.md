@@ -4,10 +4,7 @@ TODO：
 
 * 【记录】静态分析iOS的17.8.0旧版抖音
 * 【记录】静态分析黑豹二进制HeiBao
-* 【记录】静态分析黑豹动态库zzzzHeiBaoLib.dylib
-* 【记录】用rabin2查看抖音AwemeCore二进制的信息
-* 【记录】静态分析Mask的动态库：Mask.dylib
-* 【记录】静态分析Mask的动态库：MaskPro.dylib
+
 
 ---
 
