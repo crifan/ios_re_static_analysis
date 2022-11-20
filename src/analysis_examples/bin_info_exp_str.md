@@ -26,8 +26,9 @@ jtool2 -h iOSBinaryFile > iOSBinaryFile_jtool2_h_header.txt
 jtool2 -l iOSBinaryFile > iOSBinaryFile_jtool2_l_list.txt
 jtool2 -L iOSBinaryFile > iOSBinaryFile_jtool2_L_library.txt
 jtool2 -S iOSBinaryFile > iOSBinaryFile_jtool2_S_symbol.txt
-jtool2 --analyze iOSBinaryFile > iOSBinaryFile_jtool2_analyze.txt
-# mv iOSBinaryFile.ARM64.xxx-xxx-xxx-xxx-xxx iOSBinaryFile_jtool2_analyze.txt
+
+jtool2 --analyze iOSBinaryFile
+mv iOSBinaryFile.ARM64.xxx-xxx-xxx-xxx-xxx iOSBinaryFile_jtool2_analyze.txt
 
 rabin2 -I iOSBinaryFile > iOSBinaryFile_rabin2_I_identification.txt
 rabin2 -i iOSBinaryFile > iOSBinaryFile_rabin2_i_imports.txt
