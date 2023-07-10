@@ -7,6 +7,8 @@
 * 【记录】静态分析黑豹动态库zzzzHeiBaoLib.dylib
 * 【记录】用radare2查看抖音二进制信息
 * 【记录】用rabin2查看抖音AwemeCore二进制的信息
+* 【已解决】Mac M2 Max中安装和使用jtool2
+* 【规避解决】Mac M2 Max中jtool2运行崩溃：killed
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)

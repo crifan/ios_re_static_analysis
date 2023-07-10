@@ -3,8 +3,8 @@
 * `jtool`
   * 新版叫：`jtool2`
   * 类似于`otool`的，解析查看`Mach-O`文件格式信息
-    * 区别：添加了许多Mach-O相关的命令
-      * jtool比otool功能更完善
+    * 区别：添加了许多`Mach-O`相关的命令
+      * `jtool`比`otool`功能更完善
   * 支持多种运行平台
     * `OS X`=`Mac`
     * `iOS`
@@ -23,18 +23,34 @@
 
 `Mac`中安装`jtool2`：
 
-* 方式1：`brew`
-  ```bash
-  brew install --cask jtool2
-  ```
-* 官网下载二进制
-  * 从[JTool2官网](http://www.newosxbook.com/tools/jtool.html)下载[jtool2.tgz](http://www.newosxbook.com/tools/jtool2.tgz)
-  * 解压得到：`jtool2`（和`disarm`）
-    * 提示：可以把路径加到启动脚本的`PATH`中（再source），使得命令行中可以使用
+* Intel的CPU的Mac = Intel Mac
+  * 方式1：`brew`
+    ```bash
+    brew install --cask jtool2
+    ```
+  * 方式2：官网下载二进制
+    * 从[JTool2官网](http://www.newosxbook.com/tools/jtool.html)下载[jtool2.tgz](http://www.newosxbook.com/tools/jtool2.tgz)
+    * 解压得到：`jtool2`（和`disarm`）
+      * 提示：可以把路径加到启动脚本的`PATH`中（再source），使得命令行中可以使用
+* （M1/M2等）M系列CPU的Mac = Apple Silicon Mac
+  * 注意：不要装brew安装的原始版本=官网版本的jtool2 -> 否则会出现签名问题，运行崩溃Killed
+  * 最终是换装另外的版本：
+    * https://github.com/excitedplus1s/jtool2
+      ```bash
+      brew tap excitedplus1s/repo/jtool2
+      brew install --no-quarantine excitedplus1s/repo/jtool2
+      ```
+    * 即可正常使用jtool2
+      ```bash
+      ➜  jtool2 which jtool2
+      /usr/local/bin/jtool2
+      ➜  jtool2 jtool2 --version
+      This is 2.1-The Resurgence compiled on Dec 21 2020 21:09:04
+      ```
 
 ## 使用jtool2
 
-### 查看基本头文件信息
+### 查看基本头文件header信息
 
 ```bash
 jtool2 -h yourBinary
@@ -58,19 +74,19 @@ Flags:    0x910085
 jtool2 -l v18.9.0/Payload/Aweme.app/Frameworks/AwemeCore.framework/AwemeCore
 ```
 
-### 查看使用了哪些共享库
+### 查看使用了哪些共享库Library
 
 ```bash
 jtool2 -L v18.9.0/Payload/Aweme.app/Frameworks/AwemeCore.framework/AwemeCore
 ```
 
-### 列出符号表 == nm
+### 列出符号表Symbol == nm
 
 ```bash
 jtool2 -S v18.9.0/Payload/Aweme.app/Frameworks/AwemeCore.framework/AwemeCore > AwemeCore_jtool2_S.txt
 ```
 
-### 分析 -》 导出类和函数名等
+### 分析analyze -》 导出类和函数名等
 
 ```bash
 jtool2 --analyze v18.9.0/Payload/Aweme.app/Frameworks/AwemeCore.framework/AwemeCore

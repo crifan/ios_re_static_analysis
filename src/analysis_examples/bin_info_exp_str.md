@@ -5,14 +5,13 @@ TODO：
 * 【记录】静态分析iOS的17.8.0旧版抖音
 * 【记录】静态分析黑豹二进制HeiBao
 
-
 ---
 
 此处对于静态分析中的，查看二进制信息和导出字符串等资源，给出实例，供参考。
 
 ## 通用成套做法
 
-* 典型的**成套的做法** = `otool`+`nm`+`strings`+`jtool2`+`rabin2`：
+* 典型的**成套的做法** = `otool`+`nm`+`strings`+`jtool2`+`rabin2`+`ldid`/`codesign`：
 
 ```bash
 otool -l iOSBinaryFile > iOSBinaryFile_otool_l.txt
@@ -37,6 +36,17 @@ rabin2 -l iOSBinaryFile > iOSBinaryFile_rabin2_l_libraries.txt
 rabin2 -z iOSBinaryFile > iOSBinaryFile_rabin2_z_strings.txt
 rabin2 -s iOSBinaryFile > iOSBinaryFile_rabin2_s_symbols.txt
 rabin2 -S iOSBinaryFile > iOSBinaryFile_rabin2_S_sections.txt
+
+# export entitlements
+codesign -d --entitlements - iOSBinaryFile > iOSBinaryFile_codesign_entitlement.xml
+# or
+# ldid -e iOSBinaryFile > iOSBinaryFile_ldld_entitlement.xml
+
+# export code sign info
+#   for binary
+codesign -vv -d iOSBinaryFile > iOSBinaryFile_codesign.txt
+#   for app
+codesign -vv -d xxx.App > iOSApp_codesign.txt
 ```
 
 * 特殊：
