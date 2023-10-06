@@ -53,7 +53,7 @@ iOS逆向期间，IDA的伪代码中，有时候会看到：`objc_enumerationMut
     do
     {
       v34 = 0LL;
-。。。
+...
       v81 = v31;
       do
       {
@@ -62,7 +62,7 @@ iOS逆向期间，IDA的伪代码中，有时候会看到：`objc_enumerationMut
         v86 = v34;
         v35 = *(_QWORD *)(*((_QWORD *)&v97 + 1) + 8 * v34);
         v85 = jmp_objc_msgSend_x19tox2(v26[83], objectForKeyedSubscript__);
-。。。
+...
       }
       while ( v86 + 1 < (unsigned __int64)v31 );
       v31 = objc_msgSend(v28, v73, &v97, &v109, 16LL);

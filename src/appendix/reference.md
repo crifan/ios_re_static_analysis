@@ -9,6 +9,9 @@
 * 【记录】用rabin2查看抖音AwemeCore二进制的信息
 * 【已解决】Mac M2 Max中安装和使用jtool2
 * 【规避解决】Mac M2 Max中jtool2运行崩溃：killed
+* 【记录】用strings查看dylib库中包含的字符串
+* 【记录】研究黑豹dylib文件zzzzHeiBaoLib.dylib中字符串和反越狱相关内容
+* 【记录】研究佐罗dylib文件zorro.dylib中字符串和反越狱相关内容
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
