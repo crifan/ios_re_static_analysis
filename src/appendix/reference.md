@@ -12,6 +12,7 @@
 * 【记录】用strings查看dylib库中包含的字符串
 * 【记录】研究黑豹dylib文件zzzzHeiBaoLib.dylib中字符串和反越狱相关内容
 * 【记录】研究佐罗dylib文件zorro.dylib中字符串和反越狱相关内容
+* 【记录】用Cutter查看分析抖音AwemeCore二进制文件信息
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
@@ -34,4 +35,5 @@
 * [Entrypoint - The Official Radare2 Book](https://book.rada.re/tools/rabin2/entrypoints.html)
 * [File Identification - The Official Radare2 Book](https://book.rada.re/tools/rabin2/file_identification.html)
 * [Rabin2 - The Official Radare2 Book](https://book.rada.re/tools/rabin2/intro.html)
+* [Introduction - The Official Radare2 Book](https://book.rada.re/index.html)
 * 
