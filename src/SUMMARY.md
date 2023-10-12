@@ -19,8 +19,6 @@
     * [Hopper](analysis_content/analysis_code_logic/hopper.md)
 * [静态分析实例](analysis_examples/README.md)
   * [查看信息和导出字符串](analysis_examples/bin_info_exp_str.md)
-* [经验心得](some_experience/README.md)
-  * [IDA vs Hopper](some_experience/ida_vs_hopper.md)
 * [相关工具](related_tools/README.md)
   * [radare2](related_tools/radare2/README.md)
     * [Cutter](related_tools/radare2/cutter/README.md)
