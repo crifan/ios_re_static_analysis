@@ -1,6 +1,6 @@
 {
-  "latestVersion": "v1.2.0",
-  "lastUpdate": "20231007",
+  "latestVersion": "v1.2.5",
+  "lastUpdate": "20231020",
   "gitRepoName": "ios_re_static_analysis",
   "bookName": "iOS逆向开发：静态分析",
   "bookDescription": "介绍iOS逆向开发期间的静态分析。先是静态分析的概览；接着是从ipa中找到要分析的二进制文件；再是静态分析主要涉及的内容，包括用Mach-O工具，用strings、nm、otool等导出字符串资源，用class-dump导出ObjC头文件，用IDA、Hopper等分析代码逻辑等等；以及相关工具，比如radare2以及GUI版Cutter等；然后给出一些相关实例；最后再整理一些相关的经验心得。"

@@ -24,5 +24,6 @@
     * [Cutter](related_tools/radare2/cutter/README.md)
       * [举例](related_tools/radare2/cutter/example/README.md)
         * [AwemeCore](related_tools/radare2/cutter/example/awemecore.md)
+* [静态分析心得](summary/README.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)

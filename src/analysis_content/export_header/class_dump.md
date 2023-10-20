@@ -25,29 +25,34 @@ TODO：
 
 ## 版本和下载
 
-* `class-dump`有多个版本
-  * 官网的版本
-    * 安装包
-      * [class-dump-3.5.dmg](http://stevenygard.com/download/class-dump-3.5.dmg)
-    * 相关资料
-      * GitHub
-        * nygard/class-dump: Generate Objective-C headers from Mach-O files.
-          * https://github.com/nygard/class-dump
-      * 官网
-        * class-dump - Steve Nygard
-          * http://stevenygard.com/projects/class-dump/
-      * 源码
-        * [class-dump-3.5.tar.gz](http://stevenygard.com/download/class-dump-3.5.tar.gz)
-          * 或：[class-dump-3.5.tar.bz2](http://stevenygard.com/download/class-dump-3.5.tar.bz2)
-  * 升级版=优化版：支持swift和ObjC混淆
-    * 有多个源
-      * 比如
-        * `MonkeyDev`中的`class-dump`
-          * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
-      * 其他：待研究
-        * https://github.com/0xced/class-dump
-          * swift分支=swift版本
-            * https://github.com/0xced/class-dump/tree/swift-binaries
+* `class-dump`版本
+  * 概述
+    * 推荐：支持Swift和ObjC混淆的版本
+      * `MonkeyDev`中的`class-dump`
+        * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+  * 详解
+    * 官网的版本
+      * 安装包
+        * [class-dump-3.5.dmg](http://stevenygard.com/download/class-dump-3.5.dmg)
+      * 相关资料
+        * GitHub
+          * nygard/class-dump: Generate Objective-C headers from Mach-O files.
+            * https://github.com/nygard/class-dump
+        * 官网
+          * class-dump - Steve Nygard
+            * http://stevenygard.com/projects/class-dump/
+        * 源码
+          * [class-dump-3.5.tar.gz](http://stevenygard.com/download/class-dump-3.5.tar.gz)
+            * 或：[class-dump-3.5.tar.bz2](http://stevenygard.com/download/class-dump-3.5.tar.bz2)
+    * 升级版=优化版：支持swift和ObjC混淆
+      * 有多个源
+        * 比如
+          * `MonkeyDev`中的`class-dump`
+            * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+        * 其他：待研究
+          * https://github.com/0xced/class-dump
+            * swift分支=swift版本
+              * https://github.com/0xced/class-dump/tree/swift-binaries
 
 ## 用法
 
