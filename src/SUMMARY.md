@@ -25,5 +25,6 @@
       * [举例](related_tools/radare2/cutter/example/README.md)
         * [AwemeCore](related_tools/radare2/cutter/example/awemecore.md)
 * [静态分析心得](summary/README.md)
+  * [二进制中找不到类](summary/bin_not_found_class.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)
