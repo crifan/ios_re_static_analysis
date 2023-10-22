@@ -17,6 +17,8 @@
 * 【已解决】iOS逆向WhatsApp：寻找类WAURLQueryItem的定义
 * 【已解决】nm输出的函数符号类型T、S、U、s的含义
 * 【已解决】iOS逆向WhatsApp：静态分析WhatsApp二进制
+* 【整理】Mac中2个版本的ldid：brew版和iOSOpenDev版
+* 【已解决】修改iOS二进制权限工具：ldid
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
@@ -40,4 +42,6 @@
 * [File Identification - The Official Radare2 Book](https://book.rada.re/tools/rabin2/file_identification.html)
 * [Rabin2 - The Official Radare2 Book](https://book.rada.re/tools/rabin2/intro.html)
 * [Introduction - The Official Radare2 Book](https://book.rada.re/index.html)
+* [git.saurik.com Git - ldid.git/summary](https://git.saurik.com/ldid.git)
+* [xerub/ldid: Unofficial fork from saurik git repository git://git.saurik.com/ldid.git (github.com)](https://github.com/xerub/ldid)
 * 
