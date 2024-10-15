@@ -1,14 +1,6 @@
-# nm
+# 举例
 
-## 用法
-
-```bash
-nm iOSBinaryFile > iOSBinaryFile_nm.txt
-```
-
-## 举例
-
-### MaskPro.dylib
+## MaskPro.dylib
 
 ```bash
 ➜  DynamicLibraries nm MaskPro.dylib > MaskProDylib/MaskProDylib_nm.txt
@@ -16,7 +8,7 @@ nm iOSBinaryFile > iOSBinaryFile_nm.txt
 
 输出：
 
-![export_str_maskprodylib_nm](../../assets/img/export_str_maskprodylib_nm.png)
+![export_str_maskprodylib_nm](../../../assets/img/export_str_maskprodylib_nm.png)
 
 ```text
 MaskPro.dylib (for architecture armv7):

@@ -19,6 +19,10 @@
 * 【已解决】iOS逆向WhatsApp：静态分析WhatsApp二进制
 * 【整理】Mac中2个版本的ldid：brew版和iOSOpenDev版
 * 【已解决】修改iOS二进制权限工具：ldid
+* 【记录】写shell脚本自动化导出安卓ELF的so库文件的静态字符串等资源内容
+* 【记录】静态分析黑豹二进制HeiBao
+* 【未解决】静态分析符号函数字符串：Aweme
+* 【未解决】静态分析符号函数字符串：AwemeCore
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
