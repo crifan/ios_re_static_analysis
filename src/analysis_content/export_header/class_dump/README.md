@@ -30,6 +30,8 @@ TODO：
     * 推荐：支持Swift和ObjC混淆的版本
       * `MonkeyDev`中的`class-dump`
         * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+    * 如果报错`Unknown load command: 0x00000032`，则要换成：支持`LC_DYLD_CHAINED_FIXUPS`的：`classdumpc`
+      * https://github.com/lechium/classdumpios/releases/download/4.2.0-RELEASE1/classdump-c_4.2.0-RELEASE1.zip
   * 详解
     * 官网的版本
       * 安装包
@@ -44,22 +46,71 @@ TODO：
         * 源码
           * [class-dump-3.5.tar.gz](http://stevenygard.com/download/class-dump-3.5.tar.gz)
             * 或：[class-dump-3.5.tar.bz2](http://stevenygard.com/download/class-dump-3.5.tar.bz2)
-    * 升级版=优化版：支持swift和ObjC混淆
+    * 升级版=优化版：支持`Swift`和`ObjC`混淆
       * 有多个源
         * 比如
           * `MonkeyDev`中的`class-dump`
-            * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+            * 下载
+              * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
         * 其他：待研究
           * https://github.com/0xced/class-dump
             * swift分支=swift版本
               * https://github.com/0xced/class-dump/tree/swift-binaries
+    * 支持最新的`Load Command`（比如：`LC_DYLD_CHAINED_FIXUPS`）的版本
+      * 目的：旧版`class-dump`对于新的`Mach-O`会报错：`Unknown load command: 0x00000032`，对应的需要，支持最新的`LC_DYLD_CHAINED_FIXUPS`的`Load Command`，才可以
+      * 支持`LC_DYLD_CHAINED_FIXUPS`的class-dump
+        * lechium/classdumpios
+          * https://github.com/lechium/classdumpios
+            * 如何得到：`classdumpc`
+              * 直接下载
+                * https://github.com/lechium/classdumpios/releases
+                  * 4.2.0 RELEASE
+                    * https://github.com/lechium/classdumpios/releases/download/4.2.0-RELEASE1/classdump-c_4.2.0-RELEASE1.zip
+                      * 下载后，解压得到二进制文件：`classdump-c_4.2.0-RELEASE1/Release/classdumpc`
+              * 自己编译
+                * 下载`macos`的branch的源码：
+                  * https://github.com/lechium/classdumpios/tree/macos
+                * 自己用Xcode编译（出二进制：`classdumpc`）
+    * （另外一个）支持`Swift`的版本
+      * 目的：和`class-dump`输出结果（导出的头文件），有时候不完全一样（比如Swift的信息输出略有不同）
+        * 此时可以通过2套结果，互相对比，便于逆向时查看细节信息
+      * dsdump
+        * 原始版本
+          * DerekSelander/dsdump
+            * https://github.com/DerekSelander/dsdump
+        * （别人fork的）新版
+          * paradiseduo
+            * paradiseduo/dsdump
+              * https://github.com/paradiseduo/dsdump
+            * 最新替代版：`paradiseduo/resymbol`
+              * https://github.com/paradiseduo/resymbol
+                * 用于代替
+                  * https://github.com/paradiseduo/dsdump
+              * 如何得到二进制的`resymbol`
+                * 下载代码
+                  ```bash
+                  git clone https://github.com/paradiseduo/resymbol.git
+                  ```
+                * 自己编译
+                  * Apple Silicon = ARM
+                    ```bash
+                    ./build-macOS_arm.sh
+                    ```
+                  * Intel = X86
+                    ```bash
+                    build-macOS_x86.sh
+                    ```
+                * 编译输出二进制文件：`resymbol`
 
 ## 用法
+
+### class-dump系列
 
 典型用法：
 
 ```bash
-./class-dump --arch <arch> -H -o <outputFolder> <inputBinaryFile>
+class-dump --arch <arch> -H -o <outputFolder> <inputBinaryFile>
+classdumpc --arch <arch> -H -o <outputFolder> <inputBinaryFile>
 ```
 
 * 参数说明
@@ -88,6 +139,14 @@ TODO：
   ```bash
   ./class-dump --arch arm64 -H ipa/Payload/TikTok.app/Frameworks/MusicallyCore.framework/MusicallyCore -o tiktok_headers_26.8.0
   ```
+* `Apple Store`
+  ```bash
+  class-dump --arch arm64 -H AppleStore/ipa/Payload/Apple\ Store.app/Apple\ Store -o AppleStore_headers_5.18.0.910
+  ```
+* `mobileactivationd`
+  ```bash
+  classdump-c_4.2.0-RELEASE1/Release/classdumpc --arch arm64 -H -o ../staticAnalysis/headers mobileactivationd
+  ```
 * 其他
   * class-dump AppKit
     * `class-dump /System/Library/Frameworks/AppKit.framework`
@@ -97,6 +156,20 @@ TODO：
     * `class-dump /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework -r --sdk-ios 4.3`
   * class-dump UIKit (and all the frameworks it uses) from developer tools that have been installed in /Dev42 instead of /Developer
     * `class-dump /Dev42/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework -r --sdk-root /Dev42/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk`
+
+### dsdump系列
+
+#### resymbol
+
+* resymbol
+  * 用法
+    ```bash
+    resymbol machoFile > outputHeaderFile.h
+    ```
+  * 举例
+    ```bash
+    resymbol ../../../input/mobileactivationd > mobileactivationd_headers_resymbol.h
+    ```
 
 ## 常见问题
 

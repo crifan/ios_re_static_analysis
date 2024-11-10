@@ -23,6 +23,9 @@
 * 【记录】静态分析黑豹二进制HeiBao
 * 【未解决】静态分析符号函数字符串：Aweme
 * 【未解决】静态分析符号函数字符串：AwemeCore
+* 【已解决】iOS逆向：mobileactivationd导出头文件支持Swift
+* 【记录】iOS逆向改机激活：mobileactivationd导出头文件
+* 【已解决】Mac M2 Max中获取lechium/classdumpios的二进制classdumpc
 * 
 * [iOS逆向开发](http://book.crifan.org/books/ios_reverse_dev/website)
 * [iOS逆向开发：砸壳ipa](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/)
