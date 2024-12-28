@@ -74,6 +74,23 @@ TODO：
     * （另外一个）支持`Swift`的版本
       * 目的：和`class-dump`输出结果（导出的头文件），有时候不完全一样（比如Swift的信息输出略有不同）
         * 此时可以通过2套结果，互相对比，便于逆向时查看细节信息
+      * 对比
+        * dsdump vs class-dump
+          * 概述：总体算各有千秋
+          * 细节
+            * 多数类
+              * class-dump
+                * 能导出对应的类和私有属性，但是不显示偏移量和大小
+              * dsdump
+                * 类中属性，除了属性名和类型，还能显示出偏移量和空间占用大小-》很方便，利于调试和逆向
+                * 以及：函数（实例函数等），也带：二进制内偏移地址-》也方便动态调试时直接计算函数地址
+            * 有些类
+              * class-dump
+                * 看不出类型
+                * 看不出偏移量和大小
+              * dsdump
+                * 也看不出类型
+                * 但能看出偏移量和大小
       * dsdump
         * 原始版本
           * DerekSelander/dsdump
@@ -101,6 +118,7 @@ TODO：
                     build-macOS_x86.sh
                     ```
                 * 编译输出二进制文件：`resymbol`
+
 
 ## 用法
 
@@ -158,6 +176,18 @@ classdumpc --arch <arch> -H -o <outputFolder> <inputBinaryFile>
     * `class-dump /Dev42/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework -r --sdk-root /Dev42/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk`
 
 ### dsdump系列
+
+#### dsdump
+
+```bash
+python3 dsdump.py -d -i machOFile -o outputFolder
+```
+
+##### 举例
+
+```bash
+python3 dsdump.py -d -i /Users/crifan/dev/dev_root/iosReverse/WhatsApp/ipa/Payload/WhatsApp.app/WhatsApp -o WhatsApp_swift_headers
+```
 
 #### resymbol
 
