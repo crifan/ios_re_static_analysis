@@ -26,12 +26,16 @@ TODO：
 ## 版本和下载
 
 * `class-dump`版本
-  * 概述
-    * 推荐：支持Swift和ObjC混淆的版本
-      * `MonkeyDev`中的`class-dump`
-        * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
-    * 如果报错`Unknown load command: 0x00000032`，则要换成：支持`LC_DYLD_CHAINED_FIXUPS`的：`classdumpc`
-      * https://github.com/lechium/classdumpios/releases/download/4.2.0-RELEASE1/classdump-c_4.2.0-RELEASE1.zip
+  * 概述 = 结论
+    * ObjC
+      * 推荐：支持Swift和ObjC混淆的版本
+        * `MonkeyDev`中的`class-dump`
+          * https://github.com/AloneMonkey/MonkeyDev/blob/master/bin/class-dump
+      * 如果报错`Unknown load command: 0x00000032`，则要换成：支持`LC_DYLD_CHAINED_FIXUPS`的：`classdumpc`
+        * https://github.com/lechium/classdumpios/releases/download/4.2.0-RELEASE1/classdump-c_4.2.0-RELEASE1.zip
+    * Swift
+      * 用我自己基于[paradiseduo/dsdump](https://github.com/paradiseduo/dsdump)继续优化的 [crifan/dsdump](https://github.com/crifan/dsdump)
+        * 原因：能显示字段属性的大小和偏移量 -》 方便辅助调试搞懂类的字段定义 -》 快速写出类的定义 -》加到IDA中 -》 优化伪代码 -》 尽快搞懂代码含义
   * 详解
     * 官网的版本
       * 安装包
@@ -118,7 +122,8 @@ TODO：
                     build-macOS_x86.sh
                     ```
                 * 编译输出二进制文件：`resymbol`
-
+        * Crifan优化后的新版
+          * https://github.com/crifan/dsdump
 
 ## 用法
 
@@ -178,6 +183,14 @@ classdumpc --arch <arch> -H -o <outputFolder> <inputBinaryFile>
 ### dsdump系列
 
 #### dsdump
+
+下载：
+
+```bash
+git clone https://github.com/crifan/dsdump.git
+```
+
+使用：
 
 ```bash
 python3 dsdump.py -d -i machOFile -o outputFolder
