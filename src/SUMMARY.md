@@ -16,8 +16,6 @@
       * [ldid](analysis_content/export_str_res/process_sign/ldid.md)
       * [codesign](analysis_content/export_str_res/process_sign/codesign.md)
   * [导出头文件](analysis_content/export_header/README.md)
-    * [class-dump](analysis_content/export_header/class_dump/README.md)
-      * [help语法](analysis_content/export_header/class_dump/help_syntax.md)
   * [分析代码逻辑](analysis_content/analysis_code_logic/README.md)
     * [IDA](analysis_content/analysis_code_logic/ida.md)
     * [Hopper](analysis_content/analysis_code_logic/hopper.md)
