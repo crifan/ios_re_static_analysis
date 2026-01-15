@@ -7,6 +7,7 @@
 用下面的自动化脚本，一键自动处理：
 
 * `exportMacho_StrResInfo.sh`
+  * 说明：已上传到 [iOSReverseTools](https://github.com/crifan/iOSReverseTools)中的 **[exportMacho_StrResInfo.sh](https://github.com/crifan/iOSReverseTools/blob/main/staticAnalysis/exportStrResInfo/exportMacho_StrResInfo.sh)**
 
 ```sh
 #!/bin/bash
